@@ -1,12 +1,19 @@
 # JVZoo IPN for Laravel 5
 
 ## Installation
-Include laravel-jvzoo as a dependency in composer.json:
-	"kjellberg/laravel-jvzoo": "dev-master"
+#### 1. Include laravel-jvzoo as a dependency in composer.json:
+	
+	"require": {
+		...
+		"kjellberg/laravel-jvzoo": "dev-master"
+		...
+    },
+    
+#### 2. run `composer install` to download the dependency. 
+	
+	$ composer install
 
-run `composer install` to download the dependency. 
-
-Add the ServiceProvider to your provider array within `config/app.php` 
+#### 3. Add the ServiceProvider to your provider array within `config/app.php` 
 
 	'providers' => [
 		...
@@ -14,10 +21,13 @@ Add the ServiceProvider to your provider array within `config/app.php`
 		...
 	]
 
-Add your *JVZoo API secret* key to `.env`
+#### 4. Add your *JVZoo API secret* key to `.env`
+
 	JVZOO_KEY=*************
 
-Listen to JVZoo events by adding event listeners to `routes.php`
+## Usage
+
+#### Listen to JVZoo events by adding event listeners to `routes.php`
 
 	Event::listen('jvzoo', function( $data ) { /* INSERT CODE HERE */ });
 	Event::listen('jvzoo.sale', function( $data ) { /* INSERT CODE HERE */ });
@@ -28,6 +38,28 @@ Listen to JVZoo events by adding event listeners to `routes.php`
 	Event::listen('jvzoo.cancel.rebill', function( $data ) { /* INSERT CODE HERE */ });
 	Event::listen('jvzoo.uncancel.rebill', function( $data ) { /* INSERT CODE HERE */ });
 
+
+## Example 
+
+	Event::listen('jvzoo.sale', function( $data ) { 
+
+		$password = str_random(12);
+	
+		User::create([
+	        'name' => $data['ccustname'],
+	        'email' => $data['ccustemail'],
+	        'password' => bcrypt($password),
+	    ]);
+	
+	});
+	
+	Event::listen('jvzoo.cancel.rebill', function( $data ) { 
+	
+		if ($user = \App\User::where('email', '=', $data['ccustemail'])->first())
+			$user->delete();
+
+	});
+
 That's it! 
 
-Happy selling!
+**Happy selling!**
