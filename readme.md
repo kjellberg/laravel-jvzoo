@@ -19,6 +19,9 @@
 
 ## Usage
 
+#### Add your IPN url to your JVZoo product
+	http://yourdomain.com/jvzoo-ipn
+
 #### Listen to JVZoo events by adding event listeners to `routes.php`
 
 	Event::listen('jvzoo', function( $data ) { /* INSERT CODE HERE */ });
