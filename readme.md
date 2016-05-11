@@ -37,7 +37,7 @@
 
 		$password = str_random(12);
 	
-		User::create([
+		\App\User::create([
 	        'name' => $data['ccustname'],
 	        'email' => $data['ccustemail'],
 	        'password' => bcrypt($password),
