@@ -3,11 +3,7 @@
 ## Installation
 #### 1. Include laravel-jvzoo as a dependency in composer.json:
 	
-	"require": {
-		...
-		"kjellberg/laravel-jvzoo": "dev-master"
-		...
-    },
+	$ composer require kjellberg/laravel-jvzoo
     
 #### 2. run `composer install` to download the dependency. 
 	
