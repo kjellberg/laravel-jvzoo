@@ -10,7 +10,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "Kjellberg\\Jvzoo\\": "src/",
+            "Kjellberg\\Jvzoo\\": "src/"
         }
     },
     "require": {}
