@@ -2,7 +2,7 @@
 
 ## Installation
 Include laravel-jvzoo as a dependency in composer.json:
-	"kjellberg/laravel-stripe": "dev-master"
+	"kjellberg/laravel-jvzoo": "dev-master"
 
 run `composer install` to download the dependency. 
 
