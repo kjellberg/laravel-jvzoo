@@ -4,12 +4,8 @@
 #### 1. Include laravel-jvzoo as a dependency in composer.json:
 	
 	$ composer require kjellberg/laravel-jvzoo
-    
-#### 2. run `composer install` to download the dependency. 
-	
-	$ composer install
 
-#### 3. Add the ServiceProvider to your provider array within `config/app.php` 
+#### 2. Add the ServiceProvider to your provider array within `config/app.php` 
 
 	'providers' => [
 		...
@@ -17,7 +13,7 @@
 		...
 	]
 
-#### 4. Add your *JVZoo API secret* key to `.env`
+#### 3. Add your *JVZoo API secret* key to `.env`
 
 	JVZOO_KEY=*************
 
