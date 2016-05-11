@@ -1,0 +1,12 @@
+{
+    "name": "rasmus/laravel-jvzoo",
+    "description": "JVZoo IPN for Laravel 5",
+    "authors": [
+        {
+            "name": "Rasmus Kjellberg",
+            "email": "rk@youngmedia.se"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
