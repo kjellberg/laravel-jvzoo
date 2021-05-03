@@ -47,31 +47,31 @@ class JvzooController extends Controller {
 	    switch ($transaction_type) {
 
 	    	case 'SALE':
-	    		\Event::fire('jvzoo.sale', array($data));
+	    		\Event::dispatch('jvzoo.sale', array($data));
 	    		break;
 
 	    	case 'BILL':
-	    		\Event::fire('jvzoo.bill', array($data));
+	    		\Event::dispatch('jvzoo.bill', array($data));
 	    		break;
 
     		case 'RFND':
-	    		\Event::fire('jvzoo.rfnd', array($data));
+	    		\Event::dispatch('jvzoo.rfnd', array($data));
 	    		break;
 
     		case 'CGBK':
-	    		\Event::fire('jvzoo.cgbk', array($data));
+	    		\Event::dispatch('jvzoo.cgbk', array($data));
 	    		break;
 
     		case 'INSF':
-	    		\Event::fire('jvzoo.insf', array($data));
+	    		\Event::dispatch('jvzoo.insf', array($data));
 	    		break;
 
     		case 'CANCEL-REBILL':
-	    		\Event::fire('jvzoo.cancel.rebill', array($data));
+	    		\Event::dispatch('jvzoo.cancel.rebill', array($data));
 	    		break;
 
     		case 'UNCANCEL-REBILL':
-	    		\Event::fire('jvzoo.uncancel.rebill', array($data));
+	    		\Event::dispatch('jvzoo.uncancel.rebill', array($data));
 	    		break;
 	    }
 	    
